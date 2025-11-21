@@ -96,10 +96,7 @@ npm install
 ```
 VITE_BACKEND_URL=http://localhost:8000
 ```
-
-⚠️ **No trailing slash!**  
-Correct → `http://localhost:8000`  
-Wrong ❌ → `http://localhost:8000/`
+  
 
 ## 3️⃣ Start frontend
 
