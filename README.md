@@ -248,16 +248,5 @@ Record these steps for your project video:
 
 ---
 
-# ✔ Final Notes
 
-- Do NOT expose `.env` files in GitHub  
-- Always use HTTPS backend URL in production  
-- Ensure CORS_ORIGINS includes your Vercel domain  
-- Backend logs on Render show real API calls—useful for debugging  
-
----
-
-# 📬 Support
-
-For issues, open a GitHub issue or contact the maintainer.
 
