@@ -139,7 +139,7 @@ export default function Dashboard() {
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
                 <FileText className="w-6 h-6 text-white" />
               </div>
-              <h1 className="text-2xl font-bold text-gray-900">DocuCraft AI</h1>
+              <h1 className="text-2xl font-bold text-gray-900">DeepBlue AI</h1>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right hidden sm:block">
