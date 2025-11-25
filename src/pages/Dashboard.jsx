@@ -143,10 +143,10 @@ export default function Dashboard() {
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right hidden sm:block">
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-sm font-medium  text-blue-600">
                   {user?.name}
                 </p>
-                <p className="text-xs text-gray-500">{user?.email}</p>
+                <p className="text-xs   text-blue-600">{user?.email}</p>
               </div>
               <Button
                 data-testid="logout-button"
@@ -155,8 +155,8 @@ export default function Dashboard() {
                 size="sm"
                 className="gap-2"
               >
-                <LogOut className="w-4 h-4" />
-                <span className="hidden sm:inline">Logout</span>
+                <LogOut className="w-4 h-4 text-red-500" />
+                <span className="hidden sm:inline text-red-500">Logout</span>
               </Button>
             </div>
           </div>
