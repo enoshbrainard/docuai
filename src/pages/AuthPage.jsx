@@ -60,7 +60,7 @@ export default function AuthPage({ setIsAuthenticated }) {
           </div>
           <div>
             <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              DocuCraft AI
+             DeepBlue AI
             </CardTitle>
             <CardDescription className="text-base mt-2">
               {isLogin
