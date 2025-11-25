@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { FileText } from "lucide-react";
+import { FileText, Eye, EyeOff } from "lucide-react";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -19,6 +19,8 @@ const API = `${BACKEND_URL}/api`;
 export default function AuthPage({ setIsAuthenticated }) {
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -67,16 +69,16 @@ export default function AuthPage({ setIsAuthenticated }) {
             </CardDescription>
           </div>
         </CardHeader>
+
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
+
+            {/* Full Name Field (Only in Register) */}
             {!isLogin && (
               <div className="space-y-2">
-                <Label htmlFor="name" data-testid="name-label">
-                  Full Name
-                </Label>
+                <Label htmlFor="name">Full Name</Label>
                 <Input
                   id="name"
-                  data-testid="name-input"
                   type="text"
                   placeholder="John Doe"
                   value={formData.name}
@@ -88,13 +90,12 @@ export default function AuthPage({ setIsAuthenticated }) {
                 />
               </div>
             )}
+
+            {/* Email */}
             <div className="space-y-2">
-              <Label htmlFor="email" data-testid="email-label">
-                Email
-              </Label>
+              <Label htmlFor="email">Email</Label>
               <Input
                 id="email"
-                data-testid="email-input"
                 type="email"
                 placeholder="you@example.com"
                 value={formData.email}
@@ -105,25 +106,40 @@ export default function AuthPage({ setIsAuthenticated }) {
                 className="h-11"
               />
             </div>
+
+            {/* Password + Eye Icon */}
             <div className="space-y-2">
-              <Label htmlFor="password" data-testid="password-label">
-                Password
-              </Label>
-              <Input
-                id="password"
-                data-testid="password-input"
-                type="password"
-                placeholder="••••••••"
-                value={formData.password}
-                onChange={(e) =>
-                  setFormData({ ...formData, password: e.target.value })
-                }
-                required
-                className="h-11"
-              />
+              <Label htmlFor="password">Password</Label>
+
+              <div className="relative">
+                <Input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  value={formData.password}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
+                  required
+                  className="h-11 pr-10"
+                />
+
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-gray-700"
+                >
+                  {showPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
+                </button>
+              </div>
             </div>
+
+            {/* Submit Button */}
             <Button
-              data-testid="auth-submit-button"
               type="submit"
               className="w-full h-11 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-medium shadow-lg"
               disabled={loading}
@@ -138,9 +154,10 @@ export default function AuthPage({ setIsAuthenticated }) {
               )}
             </Button>
           </form>
+
+          {/* Toggle Login/Register */}
           <div className="mt-6 text-center">
             <button
-              data-testid="toggle-auth-mode"
               type="button"
               onClick={() => setIsLogin(!isLogin)}
               className="text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors"
