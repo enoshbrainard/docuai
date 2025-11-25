@@ -1,6 +1,7 @@
 # 📄 DocuAI – AI-Powered Document Generator  
 An end-to-end platform to generate **Word (.docx)** and **PowerPoint (.pptx)** documents using **AI (Google Gemini)**.  
 Built with **FastAPI**, **MongoDB**, **React (Vite)**, and **Shadcn UI**.
+live:https://docuai-dun.vercel.app/
 
 ---
 
