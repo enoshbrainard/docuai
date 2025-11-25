@@ -356,7 +356,10 @@ export default function Dashboard() {
                           <Trash2 className="w-4 h-4" />
                         </Button>
                       </AlertDialogTrigger>
-                      <AlertDialogContent onClick={(e) => e.stopPropagation()}>
+                      <AlertDialogContent
+                        onClick={(e) => e.stopPropagation()}
+                        className="sm:max-w-md bg-white text-gray-900 shadow-2xl border border-gray-200 rounded-xl p-6"
+                      >
                         <AlertDialogHeader>
                           <AlertDialogTitle>Delete Project</AlertDialogTitle>
                           <AlertDialogDescription>
